@@ -185,6 +185,11 @@ func (tb *Bucket) WaitMaxDuration(count int64, maxWait time.Duration) bool {
 	return ok
 }
 
+func  (tb *Bucket) ClockSleep(d time.Duration){
+	tb.clock.Sleep(d)
+}
+
+
 const infinityDuration time.Duration = 0x7fffffffffffffff
 
 // Take takes count tokens from the bucket without blocking. It returns
